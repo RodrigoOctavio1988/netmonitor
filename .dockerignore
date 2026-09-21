@@ -1,0 +1,42 @@
+# ── Dependências ──
+node_modules
+**/node_modules
+
+# ── Controle de versão ──
+.git
+.gitignore
+
+# ── Builds anteriores ──
+frontend/dist
+backend/public
+
+# ── Banco de dados (será criado no volume) ──
+backend/db/*.db
+backend/db/*.db-wal
+backend/db/*.db-shm
+
+# ── Logs ──
+backend/logs
+*.log
+
+# ── Variáveis de ambiente locais ──
+**/.env
+!**/.env.example
+
+# ── Arquivos legados JSON ──
+backend/latency_history.json
+backend/monitored_devices.json
+
+# ── IDE / Sistema ──
+.vscode
+.idea
+*.swp
+*.swo
+*~
+Thumbs.db
+.DS_Store
+
+# ── Docker ──
+Dockerfile
+docker-compose.yml
+.dockerignore

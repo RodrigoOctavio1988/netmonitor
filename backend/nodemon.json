@@ -1,0 +1,11 @@
+{
+  "watch": ["."],
+  "ext": "js",
+  "ignore": [
+    "*.json",
+    "logs/*",
+    "logs/**",
+    "latency_history.json",
+    "monitored_devices.json"
+  ]
+}

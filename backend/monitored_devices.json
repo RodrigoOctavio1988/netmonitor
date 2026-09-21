@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1784213723854",
+    "ip": "10.15.244.1",
+    "name": "Gateway",
+    "critical": true,
+    "category": "Roteadores",
+    "location": ""
+  },
+  {
+    "id": "1784213786405",
+    "ip": "10.15.244.3",
+    "name": "Servidor Principal",
+    "critical": true,
+    "category": "Servidores",
+    "location": ""
+  },
+  {
+    "id": "1784222835662",
+    "ip": "10.15.244.5",
+    "name": "PABX Grandstream",
+    "critical": true,
+    "category": "Outros",
+    "location": ""
+  },
+  {
+    "id": "1785154575433",
+    "ip": "10.15.244.204",
+    "name": "NPI7C8850 - SAS",
+    "critical": false,
+    "category": "Impressoras",
+    "location": ""
+  },
+  {
+    "id": "1785154615781",
+    "ip": "10.15.244.51",
+    "name": "NPI7C5896 - SADM",
+    "critical": false,
+    "category": "Impressoras",
+    "location": ""
+  },
+  {
+    "id": "1785259718134",
+    "ip": "10.15.244.217",
+    "name": "190 - AGENTE 1",
+    "critical": true,
+    "category": "Outros",
+    "location": ""
+  },
+  {
+    "id": "1785259756606",
+    "ip": "10.15.244.240",
+    "name": "190 - AGENTE 2",
+    "critical": true,
+    "category": "Outros",
+    "location": ""
+  }
+]

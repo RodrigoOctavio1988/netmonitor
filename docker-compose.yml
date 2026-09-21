@@ -1,0 +1,47 @@
+# ============================================================
+# NetMonitor — Docker Compose
+# Uso:
+#   docker compose up -d          → Inicia em background
+#   docker compose logs -f        → Acompanha logs
+#   docker compose down           → Para o container
+#   docker compose up -d --build  → Rebuild + restart
+# ============================================================
+
+services:
+  netmonitor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: netmonitor
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3001}:3001"
+    volumes:
+      - netmonitor-data:/app/data
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - DB_PATH=/app/data/netmonitor.db
+      - CORS_ORIGIN=${CORS_ORIGIN:-*}
+      - AUTH_ENABLED=${AUTH_ENABLED:-false}
+      - AUTH_USER=${AUTH_USER:-admin}
+      - AUTH_PASS=${AUTH_PASS:-netmonitor}
+      - RATE_LIMIT_WINDOW_MS=${RATE_LIMIT_WINDOW_MS:-900000}
+      - RATE_LIMIT_MAX=${RATE_LIMIT_MAX:-300}
+      - MAX_DEVICES=${MAX_DEVICES:-50}
+      - HISTORY_SIZE=${HISTORY_SIZE:-100}
+    healthcheck:
+      test: ["CMD", "node", "-e", "const http = require('http'); const req = http.get('http://localhost:3001/api/devices', (res) => { process.exit(res.statusCode === 200 ? 0 : 1); }); req.on('error', () => process.exit(1));"]
+      interval: 30s
+      timeout: 10s
+      start_period: 15s
+      retries: 3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  netmonitor-data:
+    driver: local
