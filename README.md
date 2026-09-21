@@ -1,11 +1,26 @@
 # 🌐 NetMonitor — Sistema Inteligente de Monitoramento e Topologia de Rede
 
-[![Node.js](https://img.shields.io/badge/Node.js-18%20%7C%2020-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![SQLite](https://img.shields.io/badge/SQLite-better--sqlite3-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org/)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/)
+<p align="center">
+  <img src="docs/images/banner.svg" alt="NetMonitor Hero Banner" width="100%">
+</p>
+
+<p align="center">
+  <a href="#-principais-funcionalidades">Funcionalidades</a> •
+  <a href="#-demonstração-da-interface">Demonstração</a> •
+  <a href="#%EF%B8%8F-arquitetura-do-sistema">Arquitetura</a> •
+  <a href="#-instalação-e-execução-rápida">Instalação</a> •
+  <a href="#-execução-em-container-docker--docker-compose">Docker</a> •
+  <a href="#-apoie-o-projeto-via-pix">Apoiar Projeto</a>
+</p>
+
+<p align="center">
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-18%20%7C%2020-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"></a>
+  <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"></a>
+  <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"></a>
+  <a href="https://sqlite.org/"><img src="https://img.shields.io/badge/SQLite-better--sqlite3-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite"></a>
+  <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"></a>
+  <a href="https://github.com/RodrigoOctavio1988/netmonitor/actions"><img src="https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI/CD"></a>
+</p>
 
 O **NetMonitor** é uma plataforma completa e moderna para monitoramento contínuo de conectividade e desempenho de infraestruturas de TI e telecomunicações. Desenvolvido com arquitetura cliente-servidor em tempo real, oferece visualização visual e interativa de topologia de rede, detecção proativa de instabilidades, controle de acesso granular e painel analítico avançado.
 
@@ -27,6 +42,16 @@ O **NetMonitor** é uma plataforma completa e moderna para monitoramento contín
 - **⌨️ Command Palette (`Ctrl+K`):** Busca global imediata de hosts e atalhos de teclado para navegação de alta produtividade sem uso de mouse.
 - **🧹 Otimização de Disco (Purge do SQLite):** Rotina diária automática e sob demanda para expurgo de dados obsoletos e compactação física do arquivo `.db` via `VACUUM`.
 - **🐳 Containerização Multi-Stage:** Imagem Docker enxuta e segura executando com usuário não-root e suporte a volumes persistentes.
+
+---
+
+## 📸 Demonstração da Interface
+
+<p align="center">
+  <img src="docs/images/dashboard-preview.png" alt="Painel do NetMonitor" width="100%" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+  <br>
+  <em>Painel de Controle em Tempo Real com Métricas de Conectividade, Latência e Status dos Hosts</em>
+</p>
 
 ---
 
@@ -259,12 +284,29 @@ PROJETO 1/
 │   │   └── index.css                # Estilização Tailwind e keyframe animations
 │   ├── vite.config.js
 │   └── package.json
+├── docs/                        # Documentação e ativos visuais
+│   └── images/
+│       ├── banner.svg           # Banner visual oficial do projeto
+│       ├── dashboard-preview.png# Pré-visualização do painel principal
+│       └── pix-qrcode.svg       # QR Code PIX para apoio ao desenvolvedor
 ├── Dockerfile                   # Build multi-stage para ambiente de produção
 ├── docker-compose.yml           # Orquestração do container com volume persistente
 ├── package.json                 # Scripts raiz do monorepo (test, build, dev)
 ├── start.bat                    # Script executável de inicialização no Windows
 └── README.md                    # Documentação técnica oficial do sistema
 ```
+
+---
+
+## ☕ Apoie o Projeto via PIX
+
+Se este projeto foi útil para você, sua equipe ou sua infraestrutura e você deseja incentivar a continuidade do desenvolvimento com novas melhorias (como suporte a IPv6, checagem SSL e Webhooks para Telegram/Discord), considere apoiar com qualquer contribuição:
+
+<p align="center">
+  <img src="docs/images/pix-qrcode.svg" alt="QR Code PIX Rodrigo Octavio" width="220" style="background: white; padding: 14px; border-radius: 18px; border: 1px solid #cbd5e1; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);"><br><br>
+  <strong>Chave PIX (E-mail):</strong> <code>rodrigo.octavio88@gmail.com</code><br>
+  <strong>Criador &amp; Desenvolvedor:</strong> <strong>RODRIGO OCTÁVIO EUSTÁQUIO DE OLIVEIRA</strong>
+</p>
 
 ---
 
