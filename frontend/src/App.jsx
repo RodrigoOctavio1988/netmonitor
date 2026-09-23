@@ -79,13 +79,42 @@ export default function App() {
   const [isHelpModalOpen,       setIsHelpModalOpen]       = useState(false);
   const [isAboutModalOpen,      setIsAboutModalOpen]      = useState(false);
 
+  // Abertura exclusiva de modais para prevenir sobreposição
+  const handleOpenCommandPalette = () => {
+    setIsHelpModalOpen(false);
+    setIsAboutModalOpen(false);
+    setIsMobileSidebarOpen(false);
+    setIsCommandPaletteOpen(true);
+  };
+
+  const handleOpenHelpModal = () => {
+    setIsCommandPaletteOpen(false);
+    setIsAboutModalOpen(false);
+    setIsMobileSidebarOpen(false);
+    setIsHelpModalOpen(true);
+  };
+
+  const handleOpenAboutModal = () => {
+    setIsCommandPaletteOpen(false);
+    setIsHelpModalOpen(false);
+    setIsMobileSidebarOpen(false);
+    setIsAboutModalOpen(true);
+  };
+
+  const handleCloseAllModals = () => {
+    setIsCommandPaletteOpen(false);
+    setIsHelpModalOpen(false);
+    setIsAboutModalOpen(false);
+    setIsMobileSidebarOpen(false);
+  };
+
   // Atalhos de Teclado
   useKeyboardShortcuts({
     setActiveTab,
-    onOpenCommandPalette: () => setIsCommandPaletteOpen(true),
+    onOpenCommandPalette: handleOpenCommandPalette,
     onOpenAddDevice:      () => { setActiveTab('dashboard'); },
-    onOpenHelpModal:      () => setIsHelpModalOpen(true),
-    onCloseModals:        () => { setIsCommandPaletteOpen(false); setIsHelpModalOpen(false); setIsAboutModalOpen(false); setIsMobileSidebarOpen(false); }
+    onOpenHelpModal:      handleOpenHelpModal,
+    onCloseModals:        handleCloseAllModals
   });
 
   const prevDevicesRef = useRef([]);
@@ -437,9 +466,9 @@ export default function App() {
         isMobileOpen={isMobileSidebarOpen}
         onCloseMobile={() => setIsMobileSidebarOpen(false)}
         unreadAlerts={unreadAlerts}
-        onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
-        onOpenHelpModal={() => setIsHelpModalOpen(true)}
-        onOpenAboutModal={() => setIsAboutModalOpen(true)}
+        onOpenCommandPalette={handleOpenCommandPalette}
+        onOpenHelpModal={handleOpenHelpModal}
+        onOpenAboutModal={handleOpenAboutModal}
         user={user}
         onLogout={handleLogout}
       />
@@ -517,8 +546,8 @@ export default function App() {
         setActiveTab={setActiveTab}
         onToggleTheme={toggleTheme}
         theme={theme}
-        onOpenHelpModal={() => setIsHelpModalOpen(true)}
-        onOpenAboutModal={() => setIsAboutModalOpen(true)}
+        onOpenHelpModal={handleOpenHelpModal}
+        onOpenAboutModal={handleOpenAboutModal}
       />
 
       <KeyboardHelpModal

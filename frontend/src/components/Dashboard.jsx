@@ -785,7 +785,7 @@ export default function Dashboard({
 
         {/* Coluna direita — Detalhes do host */}
         <div className="lg:col-span-1">
-          <div className="glass-card p-5 rounded-2xl lg:sticky lg:top-8 lg:h-[calc(100vh-140px)] flex flex-col justify-between">
+          <div className="glass-card p-5 rounded-2xl lg:sticky lg:top-8 lg:max-h-[calc(100vh-140px)] overflow-y-auto flex flex-col justify-between">
             {activeDevice ? (
               <>
                 <div className="space-y-5">
